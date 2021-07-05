@@ -40,7 +40,7 @@ Groups to send to:
 
 -adults................Include members ages 18 and over.
 -children..............Include members ages 11 and under.
--elders................Include members who hold the Melchezedek Priesthood.
+-elders................Include members who hold the Melchizedek Priesthood.
 -men...................Include male members.
 -women.................Include female members.
 -youth.................Include members ages 12 to 17.
