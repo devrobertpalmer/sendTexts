@@ -19,7 +19,7 @@ Uses iMessages to send a text message to members on the specified list from your
 Other required files:
 
 LandLineList.json......The list of phone numbers that are known to be unable to recieve text messages.
-SkipList.json..........The list of phone numbers who'se owners have asked to not recieve any more messages.
+SkipList.json..........The list of phone numbers whose owners have asked to not recieve any more messages.
 
 Groups to send to:
 
@@ -33,8 +33,8 @@ Groups to send to:
 Who to send to:
 
 -list:<file>...........The membership list in JSON format. This is required.
--name:<name>...........Filter to members who'se names include the given substring.
--only:<list>...........Limit the message to the list of members who'se names appear in <list>.  Format is a JSON array of strings.  The entries must match the member's preferred name.
+-name:<name>...........Filter to members whose names include the given substring.
+-only:<list>...........Limit the message to the list of members whose names appear in <list>.  Format is a JSON array of strings.  The entries must match the member's preferred name.
 
 Help understanding what is going to happen:
 
