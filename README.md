@@ -9,9 +9,12 @@ Install node on a Mac: https://nodejs.org/en/download/
 It also requires apple script.
 
 ## Usage
-Use `LandLineList.json` to skip sending messages to those numbers that you find out are unable to recieve text messages.
+For the skip lists below, numbers are trimmed such that there is no leading or trailing whitespace and all parenthesis, dashes, spaces, and dots are removed before comparing with numbers in the skip list.
 
-Use `SkipList.json` to skip sending messages to those numbers that respond to you that they wish you would not send them messages.
+<ul>
+<li>Use `LandLineList.json` to skip sending messages to those numbers that you find out are unable to recieve text messages.  
+<li>Use `SkipList.json` to skip sending messages to those numbers that respond to you that they wish you would not send them messages. 
+</ul>
 
 The [ExampleOnly.json](./ExampleOnly.json) file is a list of names that will be the only names from your list that will receive your text message.  Confirm by using `-dry` before sending to see who will receive your message.
 
