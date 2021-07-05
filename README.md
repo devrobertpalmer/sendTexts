@@ -9,6 +9,12 @@ Install node on a Mac: https://nodejs.org/en/download/
 It also requires apple script.
 
 ## Usage
+Use `LandLineList.json` to skip sending messages to those numbers that you find out are unable to recieve text messages.
+
+Use `SkipList.json` to skip sending messages to those numbers that respond to you that they wish you would not send them messages.
+
+The [ExampleOnly.json](./ExampleOnly.json) file is a list of names that will be the only names from your list that will receive your text message.  Confirm by using `-dry` before sending to see who will receive your message.
+
 <pre>
 Usage: node sendAllMessages.js [options]
 
@@ -56,6 +62,6 @@ What happened:
 -summary:sent..........Include the summary of members that had a message sent to them.
 </pre>
 
-## How to get the JSON list you want to send to
+## How to get the JSON list you want to use to send your messages
 
 Getting the JSON list is up to you.  For some data providers, I recommend logging into your data provider with your username and password, navigating to the list page, opening the Chrome debugging tools by pressing `F12`, navigating to the network tab in the debugging tools and then selecting the operation with name 'member-list'.  The Response window will contain the list.  Copy this and paste it into a file and use it directly.
