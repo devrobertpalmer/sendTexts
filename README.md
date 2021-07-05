@@ -74,3 +74,8 @@ What happened:
 ## How to get the JSON list you want to use to send your messages
 
 Getting the JSON list is up to you.  For some data providers, I recommend logging into your data provider with your username and password, navigating to the list page, opening the Chrome debugging tools by pressing `F12`, navigating to the network tab in the debugging tools and then selecting the operation with name 'member-list'.  The Response window will contain the list.  Copy this and paste it into a file and use it directly.
+
+## Known issues
+
+If you end your message with an '!' such as "This is an exciting message!" you should put a space between the '!' and the '"' like this: -message:"This is an exciting message! ".  
+
