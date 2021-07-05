@@ -41,9 +41,9 @@ Groups to send to:
 
 Who to send to:
 
--list:<file>...........The membership list in JSON format. This is required.
--name:<name>...........Filter to members whose names include the given substring.
--only:<list>...........Limit the message to the list of members whose names appear in <list>.  Format is a JSON array of strings.  The entries must match the member's preferred name.
+-list:file...........The membership list in JSON format. This is required.
+-name:name...........Filter to members whose names include the given substring.
+-only:list...........Limit the message to the list of members whose names appear in list.  Format is a JSON array of strings.  The entries must match the member's preferred name.
 
 Help understanding what is going to happen:
 
@@ -54,7 +54,7 @@ Help understanding what is going to happen:
 The message:
 
 -hi....................Include a personalized salutation using the member's first name, such as: "Hi Fred --".
--message:<message>.....The message to send to the included members.  Be sure to put double quotes around a message that includes spaces.
+-message:"message".....The message to send to the included members.  Be sure to put double quotes around a message that includes spaces.
 
 What happened:
 
