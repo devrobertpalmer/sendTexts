@@ -16,7 +16,13 @@ For the skip lists below, numbers are trimmed such that there is no leading or t
 <li>Use `SkipList.json` to skip sending messages to those numbers that respond to you that they wish you would not send them messages. 
 </ul>
 
-The [ExampleOnly.json](./ExampleOnly.json) file is a list of names that will be the only names from your list that will receive your text message.  Confirm by using `-dry` before sending to see who will receive your message.
+The [ExampleOnly.json](./ExampleOnly.json) file is a list of names that will be the only names from your list that will receive your text message.  This is optional.
+
+Confirm by using `-dry` before sending to see who will receive your message.
+
+Also, it is recommended that you try texting yourself using the `-names:\<my name\>` option to reduce the sending just to yourself.  
+
+The script uses SMS to send the message.
 
 <pre>
 Usage: node sendAllMessages.js [options]
