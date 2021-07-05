@@ -20,7 +20,7 @@ The [ExampleOnly.json](./ExampleOnly.json) file is a list of names that will be 
 
 Confirm by using `-dry` before sending to see who will receive your message.
 
-Also, it is recommended that you try texting yourself using the `-names:\<my name\>` option to reduce the sending just to yourself.  
+Also, it is recommended that you try texting yourself using the `-names:<my name>` option to reduce the sending just to yourself.  
 
 The script uses SMS to send the message.
 
