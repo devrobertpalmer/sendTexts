@@ -79,3 +79,7 @@ Getting the JSON list is up to you.  For some data providers, I recommend loggin
 
 If you end your message with an '!' such as "This is an exciting message!" you should put a space between the '!' and the '"' like this: -message:"This is an exciting message! ".  
 
+## Last time I did this:
+
+sendTexts robert$ node sendAllMessages.js -adults -men -list:../FullList.json -message:"Reminding you about the EQ game night this Saturday, 7:00 p.m. at the church.  Potluck cookies!  Bring a game or your favorite cookies to share or just come and play.  Also, would you please invite the brothers you minister to?  See you Saturday! " -only:../District6.json -dry
+

@@ -2,8 +2,8 @@ const fs = require('fs')
 const { exec } = require('child_process')
 
 let memberList = './TestList.json'
-let skipList = './SkipList.json'
-let landLineList = './LandLineList.json'
+let skipList = '../SkipList.json'
+let landLineList = '../LandLineList.json'
 let men = false
 let women = false
 let adults = false
@@ -223,6 +223,7 @@ try {
     let invalidMembers = [];
     let noMembers = [];
     let sentMembers = [];
+    let alreadySent = [];
     if (verbose) {
         console.log(members);
     }
@@ -251,6 +252,8 @@ try {
                 skippedMembers.push(fullName);
             } else if (sanitizedNumber.length != 10) {
                 console.log("Skipping " + fullName + " due to invalid number length " + sanitizedNumber);
+            } else if (alreadySent.includes(sanitizedNumber)) {
+                console.log("Skipping " + fullName + " because " + sanitizedNumber + " has already received a text.");
             } else  {
                 console.log("Sending message to " + fullName + " at " + sanitizedNumber);
                 let messageToSend = message;
@@ -264,6 +267,7 @@ try {
                 if (verbose) {
                     console.log("Message: " + messageToSend);
                 }
+                alreadySent.push(sanitizedNumber);
                 if (!dry) {
                     exec('/usr/bin/osascript sendMessage.scpt ' + sanitizedNumber + ' "' + messageToSend + '"', (err, stdout, stderr) => {
                         if (err) {
