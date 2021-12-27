@@ -23,6 +23,7 @@ let listSent = false
 let listUnknown = false
 let useOnlyList = false
 let onlyList = './OnlyList.json'
+let sentMembersPreferredName = []
 
 function getValue(theArg) {
     return theArg.substring(theArg.indexOf(':') + 1)
@@ -195,6 +196,7 @@ function include(member) {
         for (var i = 0; i < includeList.length; i++) {
             if (member.nameFormats.listPreferredLocal.includes(includeList[i])) {
                 use = true;
+                sentMembersPreferredName.push(includeList[i]);
                 break;
             }
         }
@@ -305,7 +307,16 @@ try {
         }
         if (listSent) {
             console.log("Members that seem to have recieved the text:");
-            sentMembers.forEach(person => console.log(person));
+            sentMembe
+            rs.forEach(person => console.log(person));
+        }
+        if (useOnlyList && !sentMembersPreferredName.length > 0) {
+            console.log("Members on the only list that did not recieve the text:");
+            includeList.forEach(person => {
+                if (!sentMembersPreferredName.includes(person)) { 
+                    console.log(person); 
+                }
+            });
         }
     }
 
