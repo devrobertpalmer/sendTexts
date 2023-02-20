@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { exec } = require('child_process')
+const { execSync } = require('child_process')
 
 let memberList = './TestList.json'
 let skipList = '../SkipList.json'
@@ -224,7 +224,6 @@ try {
     let skippedMembers = [];
     let invalidMembers = [];
     let noMembers = [];
-    let sentMembers = [];
     let alreadySent = [];
     if (verbose) {
         console.log(members);
@@ -271,7 +270,7 @@ try {
                 }
                 alreadySent.push(sanitizedNumber);
                 if (!dry) {
-                    exec('/usr/bin/osascript sendMessage.scpt ' + sanitizedNumber + ' "' + messageToSend + '"', (err, stdout, stderr) => {
+                    let child = execSync('/usr/bin/osascript sendMessage.scpt ' + sanitizedNumber + ' "' + messageToSend + '"', (err, stdout, stderr) => {
                         if (err) {
                             console.log("Error: " + err);
                         } else {
@@ -284,12 +283,11 @@ try {
                         }
                     });
                 }
-                sentMembers.push(fullName);
             }
         }
     });
     if (summary) {
-        console.log("Total messages sent: " + sentMembers.length);
+        console.log("Total messages sent: " + alreadySent.length);
         console.log("Total messages blocked: " + skippedMembers.length);
         console.log("Invalid phone numbers: " + invalidMembers.length);
         console.log("No known phone number: " + noMembers.length);
